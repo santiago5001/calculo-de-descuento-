@@ -1,27 +1,31 @@
-def calcular_descuento(monto_total, porcentaje_descuento=10):
-    """
-    Calcula el descuento aplicado a un monto total.
+"""
+Crea una función llamada calcular_descuento que tome dos parámetros:
+el monto total de la compra y un valor predeterminado para el porcentaje de descuento
+ (por ejemplo, 25% por defecto).
+La función debe calcular el descuento aplicando el porcentaje al monto total de la compra.
+La función debe devolver el monto del descuento calculado.
 
-    Args:
-        monto_total (float): El monto total de la compra.
-        porcentaje_descuento (int, optional): El porcentaje de descuento a aplicar. Defaults to 10.
+Llamada a la Función:
 
-    Returns:
-        float: El monto del descuento calculado.
-    """
-    descuento = (porcentaje_descuento / 100) * monto_total
+Llama a la función: calcular_descuento al menos dos veces desde el programa principal.
+En una llamada, proporciona el monto total de la compra y, en la otra, proporciona
+tanto el monto total de la compra como el porcentaje de descuento.
+Salida de Resultados:
+
+Muestra los resultados de las llamadas a la función, incluyendo el monto del descuento y el monto final a pagar después del descuento.
+Subida del Código:"""
+
+def calcular_descuento(monto_total, porcentaje_descuento= 25):
+    descuento = monto_total * (porcentaje_descuento/100)
     return descuento
+if __name__=="__main__":
+    monto1 = 5000
+    monto2 = 7000
+    ## llamada
+    descuento1 = calcular_descuento (monto1)
+    print(f"Monto de la compra es {monto1}, el descuento es {descuento1}")
 
-# Ejemplo de como se utiliza la funcion.
-monto1 = 100
-monto2 = 200
-descuento_porcentaje = 20
+    # llamada 2
+    descuento2 = calcular_descuento(monto2,20)
+    print(f"Monto de la compra es {monto2}, el descuento es {descuento2}")
 
-descuento1 = calcular_descuento(monto1)
-descuento2 = calcular_descuento(monto2, descuento_porcentaje)
-
-monto_final1 = monto1 - descuento1
-monto_final2 = monto2 - descuento2
-
-print(f"Para un monto de ${monto1}, el descuento es de ${descuento1} y el monto final es de ${monto_final1}")
-print(f"Para un monto de ${monto2}, el descuento es de ${descuento2} y el monto final es de ${monto_final2}")
